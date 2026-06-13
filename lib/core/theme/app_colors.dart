@@ -12,6 +12,13 @@ class AppColors {
   static const Color scaffoldBg = Color(0xFFF8F9FC);
   static const Color cardBg = Color(0xFFFFFFFF);
 
+  // Shift Module
+  static const Color startedBg =
+  Color(0xFFE8F9EF);
+
+  static const Color startedText =
+  Color(0xFF22C55E);
+
   // Text Colors
   static const Color textPrimary = Color(0xFF1E1E1E);
   static const Color textSecondary = Color(0xFF6B7280);
