@@ -21,12 +21,30 @@ class ShiftCard extends StatelessWidget {
         color: isCurrent
             ? AppColors.primaryLight
             : AppColors.white,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: isCurrent
+                ? const Color(0xFFBFD4FF)
+                : AppColors.border,
+          ),
+        boxShadow: isCurrent
+            ? [
+          BoxShadow(
+            color: AppColors.primary.withOpacity(0.08),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+          ),
+        ]
+            : [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       child: Column(
+
         crossAxisAlignment:
         CrossAxisAlignment.start,
         children: [
@@ -40,6 +58,7 @@ class ShiftCard extends StatelessWidget {
                 AppTextStyles.title.copyWith(
                   fontWeight:
                   FontWeight.w700,
+                  fontSize: 15
                 ),
               ),
 
@@ -47,8 +66,8 @@ class ShiftCard extends StatelessWidget {
                 Container(
                   padding:
                   const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 4,
+                    horizontal: 8,
+                    vertical: 3,
                   ),
                   decoration:
                   BoxDecoration(
@@ -68,6 +87,7 @@ class ShiftCard extends StatelessWidget {
                       AppColors.success,
                       fontWeight:
                       FontWeight.w600,
+                      fontSize: 11
                     ),
                   ),
                 ),
@@ -90,7 +110,9 @@ class ShiftCard extends StatelessWidget {
                 child: Text(
                   shift.siteName,
                   style:
-                  AppTextStyles.body,
+                  AppTextStyles.body.copyWith(
+                    color: AppColors.textSecondary
+                  ),
                 ),
               ),
 

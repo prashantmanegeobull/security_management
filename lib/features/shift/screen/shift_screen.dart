@@ -25,11 +25,12 @@ class ShiftScreen extends StatelessWidget {
           AppColors.white,
           elevation: 0,
           scrolledUnderElevation: 0,
+          centerTitle: false,
 
           title: Text(
             "My Shifts",
             style:
-            AppTextStyles.title,
+            AppTextStyles.title.copyWith(fontSize: 17),
           ),
 
           bottom: PreferredSize(
@@ -50,7 +51,7 @@ class ShiftScreen extends StatelessWidget {
                   labelStyle: TextStyle(
                     fontWeight:
                     FontWeight.w600,
-                    fontSize: 15,
+                    fontSize: 12,
                   ),
                   tabs: [
                     Tab(
@@ -102,7 +103,7 @@ class ShiftScreen extends StatelessWidget {
                       14,
                     ),
                     onTap: () {
-                      Get.to(()=>ShiftDetailScreen(shift: controller.currentShifts[index],));
+                      Get.to(()=>ShiftDetailsScreen(shift: controller.currentShifts[index],));
                     },
                     child: ShiftCard(
                       shift: controller
