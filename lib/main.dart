@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:security_management/features/shift/screen/my_sites_screen.dart';
+=======
+import 'core/theme/app_theme.dart';
+import 'features/DashBoard/View/dashboard_view.dart';
+>>>>>>> origin/dashboard_ui
 
 import 'core/bindings/shift_binding.dart';
 import 'core/theme/app_theme.dart';
@@ -12,12 +17,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
 
+<<<<<<< HEAD
       title: 'Shift Management',
 
       initialRoute: '/sites',
@@ -38,3 +43,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
+=======
+      title: "Security Management",
+
+      theme: AppTheme.lightTheme,
+
+      home:DashboardView(),
+    );
+  }
+}
+>>>>>>> origin/dashboard_ui

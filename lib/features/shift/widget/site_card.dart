@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/theme/app_colors.dart';
+import '../my_theme/app_colors.dart';
+
 
 class SiteCard extends StatelessWidget {
   final String siteCode;
   final String siteName;
   final String siteAddress;
+  final bool isActive;
 
-  const SiteCard({super.key,
+  const SiteCard({
+    super.key,
     required this.siteCode,
     required this.siteName,
     required this.siteAddress,
+    required this.isActive,
   });
 
   @override
@@ -19,21 +23,30 @@ class SiteCard extends StatelessWidget {
     siteCode.replaceAll("Site ", "");
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(18),
 
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: AppColors.cardBg,
 
         borderRadius:
-        BorderRadius.circular(14),
+        BorderRadius.circular(20),
+
+        border: Border.all(
+          color: AppColors.border,
+          width: 1,
+        ),
 
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(
-              0.05,
+            color:
+            Colors.black.withOpacity(
+              0.04,
             ),
-            blurRadius: 12,
-            offset: const Offset(0, 3),
+            blurRadius: 20,
+            offset: const Offset(
+              0,
+              6,
+            ),
           ),
         ],
       ),
@@ -43,16 +56,15 @@ class SiteCard extends StatelessWidget {
         CrossAxisAlignment.start,
         children: [
           Container(
-            width: 40,
-            height: 40,
+            width: 52,
+            height: 52,
 
             decoration: BoxDecoration(
               color:
-              const Color(0xFFEFF4FF),
-
+              AppColors.primaryLight,
               borderRadius:
               BorderRadius.circular(
-                10,
+                14,
               ),
             ),
 
@@ -61,7 +73,8 @@ class SiteCard extends StatelessWidget {
             child: Text(
               letter,
               style: const TextStyle(
-                color: AppColors.primaryDark,
+                color:
+                AppColors.primaryDark,
                 fontWeight:
                 FontWeight.w700,
                 fontSize: 22,
@@ -69,7 +82,7 @@ class SiteCard extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 14),
+          const SizedBox(width: 16),
 
           Expanded(
             child: Column(
@@ -78,64 +91,82 @@ class SiteCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(
-                      siteCode,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight:
-                        FontWeight.w600,
+                    Expanded(
+                      child: Text(
+                        siteCode,
+                        style:
+                        const TextStyle(
+                          fontSize: 16,
+                          fontWeight:
+                          FontWeight
+                              .w700,
+                          color: AppColors
+                              .textPrimary,
+                        ),
                       ),
                     ),
 
-                    const Spacer(),
-
-                    Text(
-                      "Active",
-                      style: TextStyle(
-                        color:
-                        AppColors.success,
-                        fontSize: 12,
-                        fontWeight:
-                        FontWeight.w600,
+                    if (isActive)
+                      Container(
+                        padding:
+                        const EdgeInsets
+                            .symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        decoration:
+                        BoxDecoration(
+                          color: AppColors
+                              .successBg,
+                          borderRadius:
+                          BorderRadius
+                              .circular(
+                            30,
+                          ),
+                        ),
+                        child:
+                        const Text(
+                          "Active",
+                          style:
+                          TextStyle(
+                            color:
+                            AppColors
+                                .success,
+                            fontSize:
+                            12,
+                            fontWeight:
+                            FontWeight
+                                .w600,
+                          ),
+                        ),
                       ),
-                    ),
                   ],
                 ),
 
-                const SizedBox(height: 4),
+                const SizedBox(height: 6),
 
                 Text(
                   siteName,
-                  style: TextStyle(
-                    color: AppColors
-                        .textSecondary,
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight:
-                    FontWeight.w400,
+                    FontWeight.w500,
+                    color: AppColors
+                        .textSecondary,
                   ),
                 ),
 
-                const SizedBox(height: 8),
+                const SizedBox(height: 12),
 
                 Text(
-                  siteAddress
-                      .replaceAll(
-                    " - 560001",
-                    "",
-                  )
-                      .replaceAll(
-                    " - 560002",
-                    "",
-                  )
-                      .replaceAll(
-                    " - 560025",
-                    "",
-                  ),
+                  siteAddress,
                   style: const TextStyle(
-                    height: 1.5,
                     fontSize: 14,
-                    color:
-                    AppColors.textPrimary,
+                    height: 1.6,
+                    fontWeight:
+                    FontWeight.w400,
+                    color: AppColors
+                        .textPrimary,
                   ),
                 ),
               ],

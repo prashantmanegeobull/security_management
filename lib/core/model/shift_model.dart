@@ -10,6 +10,8 @@ class ShiftModel {
   final String siteCode;
   final String siteName;
   final String siteAddress;
+  final bool isActive;
+
   final String siteRadius;
 
   final String status;
@@ -33,6 +35,7 @@ class ShiftModel {
     required this.latitude,
     required this.longitude,
     required this.showBadge,
+    required this.isActive,
   });
 
   factory ShiftModel.fromJson(
@@ -86,6 +89,9 @@ class ShiftModel {
 
       showBadge:
       json['show_badge'] ?? false,
+
+      isActive:
+      json['isActive'] ?? false,
     );
   }
 
@@ -104,6 +110,7 @@ class ShiftModel {
       'latitude': latitude,
       'longitude': longitude,
       'show_badge': showBadge,
+      'isActive' : isActive,
     };
   }
 }

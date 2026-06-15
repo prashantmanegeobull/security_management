@@ -46,7 +46,7 @@ class ShiftService {
           77.5946,
 
           showBadge:
-          true,
+          true, isActive: true,
         ),
 
         ShiftModel(
@@ -86,7 +86,7 @@ class ShiftService {
           77.5990,
 
           showBadge:
-          false,
+          false, isActive: true,
         ),
 
         ShiftModel(
@@ -126,7 +126,7 @@ class ShiftService {
           77.6010,
 
           showBadge:
-          false,
+          false, isActive: true,
         ),
       ],
 
@@ -168,7 +168,7 @@ class ShiftService {
           77.7500,
 
           showBadge:
-          false,
+          false, isActive: true,
         ),
       ],
     };
