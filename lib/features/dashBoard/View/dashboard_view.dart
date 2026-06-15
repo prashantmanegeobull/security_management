@@ -369,7 +369,7 @@ class _DashboardViewState extends State<DashboardView> {
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 11),
 
             Text(
               title,
