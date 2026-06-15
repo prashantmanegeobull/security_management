@@ -31,4 +31,9 @@ class AppColors {
   // Others
   static const Color white = Colors.white;
   static const Color black = Colors.black;
+
+  static const Color lightgreen = Color(0xFF8CF4B2);
+  static const Color  lllightgreen = Color(0xFFD6F4E1);
+
+
 }
