@@ -42,12 +42,12 @@ class AppTextStyles {
 
   static const TextStyle bodyMedium = TextStyle(
     fontSize: 15,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
 
   static const TextStyle caption = TextStyle(
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
   );
