@@ -5,19 +5,12 @@ class AppColors {
 
   // Primary Colors
   static const Color primary = Color(0xFF0D6EFD);
-  static const Color primaryDark = Color(0xFF2E5BFF);
+  static const Color primaryDark = Color(0xFF0057D9);
   static const Color primaryLight = Color(0xFFEAF2FF);
 
   // Backgrounds
   static const Color scaffoldBg = Color(0xFFF8F9FC);
   static const Color cardBg = Color(0xFFFFFFFF);
-
-  // Shift Module
-  static const Color startedBg =
-  Color(0xFFE8F9EF);
-
-  static const Color startedText =
-  Color(0xFF22C55E);
 
   // Text Colors
   static const Color textPrimary = Color(0xFF1E1E1E);
