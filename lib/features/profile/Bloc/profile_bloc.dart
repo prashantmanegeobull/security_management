@@ -9,7 +9,7 @@ import 'profile_state.dart';
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final ProfileRepository repository;
 
-  ProfileBloc({required this.repository}) : super(ProfileInitial()) {
+  ProfileBloc( {required this.repository}) : super(ProfileInitial()) {
     on<LoadProfileEvent>(_loadProfile);
     on<UpdateProfileEvent>(_updateProfile);
   }

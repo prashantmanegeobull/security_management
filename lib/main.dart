@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:security_management/features/shift/screen/my_sites_screen.dart';
+import 'package:security_management/routes/app_pages.dart';
+import 'package:security_management/routes/app_routes.dart';
 
-import 'core/bindings/shift_binding.dart';
 import 'core/theme/app_theme.dart';
-import 'features/shift/screen/shift_screen.dart';
+import 'features/DashBoard/View/dashboard_view.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,29 +14,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
+    return ScreenUtilInit(
+      designSize: const Size(375, 812), // adjust if your design uses another size
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: "Security Management",
+          theme: AppTheme.lightTheme,
 
-      title: 'Shift Management',
-
-      initialRoute: '/sites',
-
-      getPages: [
-        GetPage(
-          name: '/shift',
-          page: () =>  ShiftScreen(),
-          binding: ShiftBinding(),
-        ),
-
-        GetPage(name: '/sites', page: ()=> MySitesScreen(),binding: ShiftBinding())
-      ],
-
-      theme: AppTheme.lightTheme,
-
+          initialRoute: AppRoutes.dashboard,
+          getPages: AppPages.routes,
+        );
+      },
     );
   }
 }
-

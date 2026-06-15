@@ -160,38 +160,38 @@ class _DashboardTabState extends State<DashboardTab>
         child: Column(
           children: [
 
-             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-
-              decoration: CommonDecorations.boxDecoration(
-                borderRadius: 0,
-                backgroundColor: AppColor.lightSkyBlue,
-                borderColor: Colors.white,
-              ),
-
-              child: Row(
-                children: [
-
-                  Image.asset(AppImages.speakerIcon,
-                      color: AppColor.darkSkyBlue,
-                      height: 25.h),
-
-                  AppSpacing.w8,
-
-                  const Expanded(
-                    child: Text(
-                      "Learn how to add clients and photos in the new workflow.",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                  ),
-
-                  Image.asset(AppImages.pdfIcon, height: 25.h),
-
-                ],
-              ),
-            ),
-
-            AppSpacing.h10,
+            //  Container(
+            //   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            //
+            //   decoration: CommonDecorations.boxDecoration(
+            //     borderRadius: 0,
+            //     backgroundColor: AppColor.lightSkyBlue,
+            //     borderColor: Colors.white,
+            //   ),
+            //
+            //   child: Row(
+            //     children: [
+            //
+            //       Image.asset(AppImages.speakerIcon,
+            //           color: AppColor.darkSkyBlue,
+            //           height: 25.h),
+            //
+            //       AppSpacing.w8,
+            //
+            //       const Expanded(
+            //         child: Text(
+            //           "Learn how to add clients and photos in the new workflow.",
+            //           style: TextStyle(fontWeight: FontWeight.w500),
+            //         ),
+            //       ),
+            //
+            //       Image.asset(AppImages.pdfIcon, height: 25.h),
+            //
+            //     ],
+            //   ),
+            // ),
+            //
+            // AppSpacing.h10,
 
              Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
@@ -357,60 +357,60 @@ class _DashboardTabState extends State<DashboardTab>
 
              AppSpacing.h10,
 
-            GridView.builder(
-
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-
-              itemCount: items.length,
-
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 5 / 2.2,
-              ),
-
-              itemBuilder: (_, index) {
-
-                final item = items[index];
-
-                return Card(
-
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-
-                    child: Row(
-                      children: [
-
-                        Image.asset(item['image'], height: 22),
-
-                        AppSpacing.w10,
-
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children: [
-
-                            Text(
-                              item['title'],
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12),
-                            ),
-
-                            Text(
-                              item['description'],
-                              style: const TextStyle(fontSize: 12),
-                            ),
-
-                          ],
-                        ),
-
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
+            // GridView.builder(
+            //
+            //   shrinkWrap: true,
+            //   physics: const NeverScrollableScrollPhysics(),
+            //
+            //   itemCount: items.length,
+            //
+            //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            //     crossAxisCount: 2,
+            //     childAspectRatio: 5 / 2.2,
+            //   ),
+            //
+            //   itemBuilder: (_, index) {
+            //
+            //     final item = items[index];
+            //
+            //     return Card(
+            //
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(10),
+            //
+            //         child: Row(
+            //           children: [
+            //
+            //             Image.asset(item['image'], height: 22),
+            //
+            //             AppSpacing.w10,
+            //
+            //             Column(
+            //               crossAxisAlignment: CrossAxisAlignment.start,
+            //
+            //               children: [
+            //
+            //                 Text(
+            //                   item['title'],
+            //                   style: const TextStyle(
+            //                       fontWeight: FontWeight.bold,
+            //                       fontSize: 12),
+            //                 ),
+            //
+            //                 Text(
+            //                   item['description'],
+            //                   style: const TextStyle(fontSize: 12),
+            //                 ),
+            //
+            //               ],
+            //             ),
+            //
+            //           ],
+            //         ),
+            //       ),
+            //     );
+            //   },
+            // ),
 
           ],
         ),

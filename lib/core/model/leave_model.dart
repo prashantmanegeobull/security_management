@@ -40,8 +40,24 @@ class LeaveModel {
       reason: json['reason']?.toString() ?? '',
       shift: json['shift']?.toString() ?? '',
       status: json['status']?.toString() ?? 'Pending',
-      weeklyLeave:json['weekly_leave']?.toString() ?? 'No',
+      weeklyLeave: json['weekly_leave']?.toString() ?? 'No',
     );
   }
-}
 
+  Map<String, dynamic> toJson() {
+    return {
+      '_id': id,
+      'user_auto_id': userAutoId,
+      'admin_auto_id': adminAutoId,
+      'app_type_id': appTypeId,
+      'leave_type': leaveType,
+      'start_date': startDate,
+      'end_date': endDate,
+      'is_half_day': isHalfDay,
+      'reason': reason,
+      'shift': shift,
+      'status': status,
+      'weekly_leave': weeklyLeave,
+    };
+  }
+}

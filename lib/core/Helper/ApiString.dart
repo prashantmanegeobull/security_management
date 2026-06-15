@@ -12,4 +12,5 @@ class ApiString {
   static const String get_leave_type = "${baseUrl}get_leave_type";
   static const String apply_leave = "${baseUrl}apply_leave";
   static const String updateProfileUser = "${baseUrl}updateProfileUser";
+  static const String get_attendance = "${baseUrl}get_attendance";
 }
