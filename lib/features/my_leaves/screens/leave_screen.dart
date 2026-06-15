@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'leave_controller.dart';
-import 'widgets/leave_card.dart';
+import '../controller/leave_controller.dart';
+import '../widgets/leave_card.dart';
+
 
 class LeaveScreen extends StatelessWidget {
   LeaveScreen({super.key});
@@ -122,7 +123,8 @@ class LeaveScreen extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                // Navigate to Apply Leave Screen
+                  Get.toNamed('/apply-leave');
+
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,

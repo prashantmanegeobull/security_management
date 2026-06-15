@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../core/model/leave_model.dart';
+import '../../../core/model/leave_model.dart';
 
 class LeaveController extends GetxController {
 
