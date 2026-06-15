@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'core/theme/app_theme.dart';
 import 'features/DashBoard/View/dashboard_view.dart';
+import 'features/notifications_Screen/view/notification_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
       theme: AppTheme.lightTheme,
 
-      home:DashboardView(),
+      home:NotificationView(),
     );
   }
 }
