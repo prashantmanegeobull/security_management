@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
-import '../../core/model/leave_model.dart';class LeaveController extends GetxController {
+import '../../core/model/leave_model.dart';
+
+class LeaveController extends GetxController {
 
   final RxInt selectedTab = 0.obs;
 
@@ -45,12 +47,12 @@ import '../../core/model/leave_model.dart';class LeaveController extends GetxCon
 
         case 2:
           return leaveList
-              .where((leave) => leave.status.toLowerCase() == 'Approved')
+              .where((leave) => leave.status.toLowerCase() == 'approved')
               .toList();
 
         case 3:
           return leaveList
-              .where((leave) => leave.status.toLowerCase() == 'Rejected')
+              .where((leave) => leave.status.toLowerCase() == 'rejected')
               .toList();
 
 
