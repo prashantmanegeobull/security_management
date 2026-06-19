@@ -4,41 +4,41 @@ class AppColors {
   AppColors._();
 
   // Primary Colors
-  static const Color primary = Color(0xFF0D6EFD);
-  static const Color primaryDark = Color(0xFF2E5BFF);
-  static const Color primaryLight = Color(0xFFEAF2FF);
+  static const Color primary = Color(0xFF2954E3);
+  static const Color primaryDark = Color(0xFF121A37);
+  static const Color primaryLight = Color(0xFFEEF2FF);
 
   // Backgrounds
-  static const Color scaffoldBg = Color(0xFFF8F9FC);
+  static const Color scaffoldBg = Color(0xFFF5F7FB);
   static const Color cardBg = Color(0xFFFFFFFF);
 
   // Shift Module
   static const Color startedBg =
-  Color(0xFFE8F9EF);
+  Color(0xFFE1F7EA);
 
   static const Color startedText =
-  Color(0xFF22C55E);
+  Color(0xFF16A34A);
 
   // Text Colors
-  static const Color textPrimary = Color(0xFF1E1E1E);
-  static const Color textSecondary = Color(0xFF6B7280);
-  static const Color textHint = Color(0xFF9CA3AF);
+  static const Color textPrimary = Color(0xFF14172A);
+  static const Color textSecondary = Color(0xFF62697B);
+  static const Color textHint = Color(0xFF9DA3B3);
 
   // Status Colors
-  static const Color success = Color(0xFF22C55E);
-  static const Color error = Color(0xFFEF4444);
-  static const Color warning = Color(0xFFF59E0B);
+  static const Color success = Color(0xFF16A34A);
+  static const Color error = Color(0xFFDC4337);
+  static const Color warning = Color(0xFFE08A1E);
 
   // Border
-  static const Color border = Color(0xFFE5E7EB);
+  static const Color border = Color(0xFFE3E7EF);
 
   // Divider
-  static const Color divider = Color(0xFFF1F5F9);
+  static const Color divider = Color(0xFFEEF1F6);
 
   // Others
   static const Color white = Colors.white;
   static const Color black = Colors.black;
 
-  static const Color lightgreen = Color(0xFF8CF4B2);
-  static const Color  lllightgreen = Color(0xFFD6F4E1);
+  static const Color lightgreen = Color(0xFF7FE6A8);
+  static const Color  lllightgreen = Color(0xFFD8F5E3);
 }

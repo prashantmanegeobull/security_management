@@ -35,10 +35,10 @@ class ShiftScreen extends StatelessWidget {
 
           bottom: PreferredSize(
             preferredSize:
-            const Size.fromHeight(48),
+            const Size.fromHeight(52),
             child: Column(
               children: [
-                const TabBar(
+                TabBar(
                   labelColor:
                   AppColors.primary,
                   unselectedLabelColor:
@@ -53,7 +53,7 @@ class ShiftScreen extends StatelessWidget {
                     FontWeight.w600,
                     fontSize: 12,
                   ),
-                  tabs: [
+                  tabs: const [
                     Tab(
                       text: "Current",
                     ),
@@ -77,7 +77,9 @@ class ShiftScreen extends StatelessWidget {
               .isLoading.value) {
             return const Center(
               child:
-              CircularProgressIndicator(),
+              CircularProgressIndicator(
+                color: AppColors.primary,
+              ),
             );
           }
 
@@ -100,7 +102,7 @@ class ShiftScreen extends StatelessWidget {
                     borderRadius:
                     BorderRadius
                         .circular(
-                      14,
+                      16,
                     ),
                     onTap: () {
                       Get.to(()=>ShiftDetailsScreen(shift: controller.currentShifts[index],));
@@ -114,9 +116,12 @@ class ShiftScreen extends StatelessWidget {
                 },
               ),
 
-              const Center(
+              Center(
                 child: Text(
                   "No Upcoming Shifts",
+                  style: AppTextStyles.body.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ),
             ],

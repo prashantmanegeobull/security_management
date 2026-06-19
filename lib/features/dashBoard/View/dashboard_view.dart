@@ -258,7 +258,7 @@ class _DashboardViewState extends State<DashboardView> {
                           color: Colors.green,
                         ),
                         SizedBox(width: 10),
-                        Text("Logged In"),
+                        Text("Log In"),
                         Spacer(),
                         Text("08:05 AM"),
                       ],

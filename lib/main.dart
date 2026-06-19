@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:security_management/features/more/screens/more_screen.dart';
 
 import 'core/theme/app_theme.dart';
 
@@ -22,14 +23,12 @@ import 'features/salary/Bloc/salary_bloc.dart';
 // Routes & Bindings
 import 'core/bindings/dashboard_binding.dart';
 import 'core/bindings/shift_binding.dart';
-import 'core/bindings/leave_binding.dart';
 import 'core/bindings/apply_leave_binding.dart';
 
 // Screens
 import 'features/dashboard/View/dashboard_view.dart';
 import 'features/shift/screen/shift_screen.dart';
 import 'features/shift/screen/my_sites_screen.dart';
-import 'features/my_leaves/screens/leave_screen.dart';
 import 'features/ApplyLeaves/screen/apply_leave_screen.dart';
 import 'features/notification/view/notification_view.dart';
 import 'features/attendance/dashboard_tab.dart';
@@ -115,11 +114,6 @@ class MyApp extends StatelessWidget {
                   binding: ShiftBinding(),
                 ),
 
-                GetPage(
-                  name: '/leaves',
-                  page: () => LeaveScreen(),
-                  binding: LeaveBinding(),
-                ),
 
                 GetPage(
                   name: '/apply-leave',
@@ -145,6 +139,11 @@ class MyApp extends StatelessWidget {
                 GetPage(
                   name: '/attendance',
                   page: () => const AttendancePage(),
+                ),
+
+                GetPage(
+                  name: '/more',
+                  page: () => const MoreScreen(),
                 ),
               ],
             ),

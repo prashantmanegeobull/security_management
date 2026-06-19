@@ -10,6 +10,7 @@ import '../../core/Helper/commonDecoration.dart';
 import '../../core/Helper/session_manager.dart';
 import '../../core/model/leave_model.dart';
 import '../../core/theme/app_colors2.dart';
+import '../../core/theme/app_text_style.dart';
 import 'Bloc/leave_bloc.dart';
 import 'Bloc/leave_event.dart';
 import 'Bloc/leave_state.dart';
@@ -210,6 +211,15 @@ class _LeaveTabState extends State<LeaveTab> {
           }
         },
         child: Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              "Shift Details",
+              style:
+              AppTextStyles.title,
+
+            ),
+            centerTitle: false,
+          ),
         body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         child: Column(

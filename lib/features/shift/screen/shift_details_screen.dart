@@ -87,13 +87,27 @@ class ShiftDetailsScreen extends StatelessWidget {
       width: double.infinity,
       padding:
       const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 16,
+        horizontal: 18,
+        vertical: 20,
       ),
       decoration: BoxDecoration(
-        color: AppColors.primaryDark,
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.primary,
+            AppColors.success,
+          ],
+        ),
         borderRadius:
-        BorderRadius.circular(16),
+        BorderRadius.circular(18),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primaryDark.withOpacity(0.25),
+            blurRadius: 18,
+            offset: const Offset(0, 8),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment:
@@ -103,14 +117,14 @@ class ShiftDetailsScreen extends StatelessWidget {
             shift.shiftName,
             style: AppTextStyles.title
                 .copyWith(
-              color: AppColors.white,
-              fontWeight:
-              FontWeight.w700,
-              fontSize: 15
+                color: AppColors.white,
+                fontWeight:
+                FontWeight.w700,
+                fontSize: 16
             ),
           ),
 
-          const SizedBox(height: 8),
+          const SizedBox(height: 10),
 
           Text(
             "${shift.startTime} - ${shift.endTime}",
@@ -128,7 +142,7 @@ class ShiftDetailsScreen extends StatelessWidget {
             style:
             AppTextStyles.body
                 .copyWith(
-              color: AppColors.white,
+              color: AppColors.white.withOpacity(0.85),
             ),
           ),
         ],
@@ -146,7 +160,7 @@ class ShiftDetailsScreen extends StatelessWidget {
         Padding(
           padding:
           const EdgeInsets.symmetric(
-            vertical: 18,
+            vertical: 16,
           ),
           child: Row(
             crossAxisAlignment:
@@ -166,7 +180,7 @@ class ShiftDetailsScreen extends StatelessWidget {
                     ),
 
                     const SizedBox(
-                      height: 8,
+                      height: 6,
                     ),
 
                     Text(
@@ -186,7 +200,7 @@ class ShiftDetailsScreen extends StatelessWidget {
           const Divider(
             height: 1,
             color:
-            AppColors.border,
+            AppColors.divider,
           ),
       ],
     );
@@ -200,7 +214,7 @@ class ShiftDetailsScreen extends StatelessWidget {
         const EdgeInsets.all(16),
         child: SizedBox(
           width: double.infinity,
-          height: 42,
+          height: 48,
           child: OutlinedButton.icon(
             onPressed: () {
               /// Open Google Maps
@@ -221,19 +235,19 @@ class ShiftDetailsScreen extends StatelessWidget {
                 color:
                 AppColors.primary,
                 fontWeight:
-                FontWeight.w600,
+                FontWeight.w700,
               ),
             ),
 
             style:
             OutlinedButton.styleFrom(
               backgroundColor:
-              AppColors.white,
+              AppColors.primaryLight,
 
               side: const BorderSide(
                 color:
                 AppColors.primary,
-                width: 1.2,
+                width: 1.3,
               ),
 
               shape:
@@ -241,7 +255,7 @@ class ShiftDetailsScreen extends StatelessWidget {
                 borderRadius:
                 BorderRadius
                     .circular(
-                  12,
+                  14,
                 ),
               ),
             ),

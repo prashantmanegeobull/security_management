@@ -14,7 +14,9 @@ import '../../core/Helper/appImages.dart';
 import '../../core/Helper/commonDecoration.dart';
 import '../../core/Helper/session_manager.dart';
 import '../../core/theme/appSpacing.dart';
+import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_colors2.dart';
+import '../../core/theme/app_text_style.dart';
 import 'Bloc/dashboard_bloc.dart';
 import 'Bloc/dashboard_event.dart';
 import 'Bloc/dashboard_state.dart';
@@ -120,6 +122,19 @@ class _AttendancePageState extends State<AttendancePage>
   Widget build(BuildContext context) {
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor:
+          AppColors.white,
+          elevation: 0,
+          scrolledUnderElevation: 0,
+          centerTitle: false,
+
+          title: Text(
+            "Attendance",
+            style:
+            AppTextStyles.title.copyWith(fontSize: 17),
+          ),
+        ),
       body: BlocBuilder<AttendanceBloc, DashboardState>(
         builder: (context, state) {
 
@@ -177,9 +192,9 @@ class _AttendancePageState extends State<AttendancePage>
 
                   Image.asset(AppImages.speakerIcon,
                       color: AppColor.darkSkyBlue,
-                      height: 25.h),
+                      height: 22),
 
-                  AppSpacing.w8,
+                  AppSpacing.w10,
 
                   const Expanded(
                     child: Text(
@@ -251,11 +266,11 @@ class _AttendancePageState extends State<AttendancePage>
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: statusItems.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: MediaQuery.of(context).size.width < 600 ? 2 : 3,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  childAspectRatio: 3 / 1.5,
+                  mainAxisExtent: 90,
                 ),
                 itemBuilder: (_, index) {
                   final item = statusItems[index];
@@ -296,10 +311,10 @@ class _AttendancePageState extends State<AttendancePage>
 
                               Text(
                                 item['status'],
-                                maxLines: 1,
+                                maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 11,
+                                  fontSize: 9,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -308,14 +323,10 @@ class _AttendancePageState extends State<AttendancePage>
                                 item['count'].toString(),
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 14.sp,
+                                  fontSize: 12.sp,
                                   color: item['statusColor'],
                                 ),
                               ),
-
-                              const SizedBox(height: 2),
-
-
 
                             ],
                           ),
@@ -353,63 +364,6 @@ class _AttendancePageState extends State<AttendancePage>
                     appTypeId: appTypeId,
                     month: day.month,
                     year: day.year,
-                  ),
-                );
-              },
-            ),
-
-             AppSpacing.h10,
-
-            GridView.builder(
-
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-
-              itemCount: items.length,
-
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 5 / 2.2,
-              ),
-
-              itemBuilder: (_, index) {
-
-                final item = items[index];
-
-                return Card(
-
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-
-                    child: Row(
-                      children: [
-
-                        Image.asset(item['image'], height: 22),
-
-                        AppSpacing.w10,
-
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children: [
-
-                            Text(
-                              item['title'],
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12),
-                            ),
-
-                            Text(
-                              item['description'],
-                              style: const TextStyle(fontSize: 12),
-                            ),
-
-                          ],
-                        ),
-
-                      ],
-                    ),
                   ),
                 );
               },

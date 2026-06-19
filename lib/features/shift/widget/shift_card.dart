@@ -21,23 +21,24 @@ class ShiftCard extends StatelessWidget {
         color: isCurrent
             ? AppColors.primaryLight
             : AppColors.white,
-        borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: isCurrent
-                ? const Color(0xFFBFD4FF)
-                : AppColors.border,
-          ),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: isCurrent
+              ? const Color(0xFFC7D4FB)
+              : AppColors.border,
+          width: isCurrent ? 1.2 : 1,
+        ),
         boxShadow: isCurrent
             ? [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.08),
+            color: AppColors.primary.withOpacity(0.10),
             blurRadius: 12,
-            offset: const Offset(0, 4),
+            offset: const Offset(0, 6),
           ),
         ]
             : [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withOpacity(0.03),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -56,9 +57,9 @@ class ShiftCard extends StatelessWidget {
                 shift.shiftName,
                 style:
                 AppTextStyles.title.copyWith(
-                  fontWeight:
-                  FontWeight.w700,
-                  fontSize: 15
+                    fontWeight:
+                    FontWeight.w700,
+                    fontSize: 15
                 ),
               ),
 
@@ -66,13 +67,12 @@ class ShiftCard extends StatelessWidget {
                 Container(
                   padding:
                   const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 3,
+                    horizontal: 9,
+                    vertical: 4,
                   ),
                   decoration:
                   BoxDecoration(
-                    color: AppColors.success
-                        .withOpacity(0.12),
+                    color: AppColors.startedBg,
                     borderRadius:
                     BorderRadius.circular(
                       20,
@@ -83,11 +83,11 @@ class ShiftCard extends StatelessWidget {
                     style:
                     AppTextStyles.caption
                         .copyWith(
-                      color:
-                      AppColors.success,
-                      fontWeight:
-                      FontWeight.w600,
-                      fontSize: 11
+                        color:
+                        AppColors.startedText,
+                        fontWeight:
+                        FontWeight.w600,
+                        fontSize: 11
                     ),
                   ),
                 ),
@@ -99,7 +99,11 @@ class ShiftCard extends StatelessWidget {
           Text(
             "${shift.startTime} - ${shift.endTime}",
             style:
-            AppTextStyles.bodyMedium,
+            AppTextStyles.bodyMedium.copyWith(
+              color: isCurrent
+                  ? AppColors.primaryDark
+                  : AppColors.textPrimary,
+            ),
           ),
 
           const SizedBox(height: 14),
@@ -111,7 +115,7 @@ class ShiftCard extends StatelessWidget {
                   shift.siteName,
                   style:
                   AppTextStyles.body.copyWith(
-                    color: AppColors.textSecondary
+                      color: AppColors.textSecondary
                   ),
                 ),
               ),
@@ -120,7 +124,10 @@ class ShiftCard extends StatelessWidget {
                 Text(
                   shift.status,
                   style:
-                  AppTextStyles.caption,
+                  AppTextStyles.caption.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
             ],
           ),

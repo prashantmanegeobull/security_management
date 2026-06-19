@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:security_management/features/more/screens/more_screen.dart';
 
 class DashboardController extends GetxController {
 
@@ -28,7 +29,7 @@ class DashboardController extends GetxController {
         break;
 
       case 3:
-        Get.toNamed('/more');
+        Get.to(()=>MoreScreen());
         break;
     }
   }
