@@ -31,30 +31,40 @@ class MySitesScreen extends StatelessWidget {
       ),
 
       body: Obx(
-            () => ListView.separated(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 12,
-          ),
+            () {
+              if (controller
+                  .isLoading.value) {
+                return const Center(
+                  child:
+                  CircularProgressIndicator(),
+                );
+              }
 
-          itemCount:
-          controller.currentShifts.length,
+              return ListView.separated(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
 
-          separatorBuilder: (_, __) =>
-          const SizedBox(height: 18),
+                itemCount:
+                controller.currentShifts.length,
 
-          itemBuilder: (context, index) {
-            final site =
-            controller.currentShifts[index];
+                separatorBuilder: (_, __) =>
+                const SizedBox(height: 18),
 
-            return SiteCard(
-              siteCode: site.siteCode,
-              siteName: site.siteName,
-              siteAddress: site.siteAddress,
-            );
-          },
-        ),
-      ),
+                itemBuilder: (context, index) {
+                  final site =
+                  controller.currentShifts[index];
+
+                  return SiteCard(
+                    siteCode: site.siteCode,
+                    siteName: site.siteName,
+                    siteAddress: site.siteAddress,
+                  );
+                },
+              );
+
+            }),
 
       bottomNavigationBar: SafeArea(
         child: Padding(

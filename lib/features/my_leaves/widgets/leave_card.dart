@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../core/model/leave_model.dart';
+import '../../../core/model/my_leave_model.dart';
 
 class LeaveCard extends StatelessWidget {
-  final LeaveModel leave;
+  final MyLeaveModel leave;
 
   const LeaveCard({
     super.key,
