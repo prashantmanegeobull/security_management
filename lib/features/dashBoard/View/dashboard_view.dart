@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_style.dart';
 import '../../dashBoard/Controller/dashboard_controller.dart';
+import '../../gps_attendance/controller/gps_attendance_controller.dart';
 import '../Widgets/dashboard_bottom_nav.dart';
 import '../Widgets/service_card.dart';
 
@@ -17,10 +18,14 @@ class DashboardView extends StatefulWidget {
 class _DashboardViewState extends State<DashboardView> {
   final DashboardController controller = Get.find<DashboardController>();
 
+  final gpsController =
+  Get.find<
+      GpsAttendanceController>();
   @override
   void initState() {
     super.initState();
     controller.selectedIndex.value = 0;
+    gpsController.startTracking();
   }
 
   @override
@@ -74,10 +79,10 @@ class _DashboardViewState extends State<DashboardView> {
                               "Hello, ${controller.userName.value}",
                               style: AppTextStyles.h3,
                             ),
-                            Text(
-                              controller.greeting.value,
-                              style: AppTextStyles.subtitle,
-                            ),
+                            // Text(
+                            //   controller.greeting.value,
+                            //   style: AppTextStyles.subtitle,
+                            // ),
                           ],
                         ),
                       ),

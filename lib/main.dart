@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:security_management/features/more/screens/more_screen.dart';
 
 import 'core/theme/app_theme.dart';
 
@@ -17,6 +16,9 @@ import 'core/services/salary_api_service.dart';
 import 'features/Leave/leave_screen.dart';
 import 'features/attendance/Bloc/dashboard_bloc.dart';
 import 'features/Leave/Bloc/leave_bloc.dart';
+import 'features/gps_attendance/binding/gps_attendance_binding.dart';
+import 'features/mark_attendance/binding/mark_attendance_binding.dart';
+import 'features/mark_attendance/screen/mark_attendance_screen.dart';
 import 'features/profile/Bloc/profile_bloc.dart';
 import 'features/salary/Bloc/salary_bloc.dart';
 
@@ -27,6 +29,7 @@ import 'core/bindings/apply_leave_binding.dart';
 
 // Screens
 import 'features/dashboard/View/dashboard_view.dart';
+import 'features/shared/active_shift_manager.dart';
 import 'features/shift/screen/shift_screen.dart';
 import 'features/shift/screen/my_sites_screen.dart';
 import 'features/ApplyLeaves/screen/apply_leave_screen.dart';
@@ -36,6 +39,7 @@ import 'features/profile/profileScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Get.put(ActiveShiftManager(), permanent: true);
   runApp(const MyApp());
 }
 
@@ -99,7 +103,10 @@ class MyApp extends StatelessWidget {
                 GetPage(
                   name: '/dashBoard',
                   page: () => const DashboardView(),
-                  binding: DashboardBinding(),
+                  bindings: [
+                    DashboardBinding(),
+                    GpsAttendanceBinding(),
+                  ],
                 ),
 
                 GetPage(
@@ -141,9 +148,13 @@ class MyApp extends StatelessWidget {
                   page: () => const AttendancePage(),
                 ),
 
+
                 GetPage(
-                  name: '/more',
-                  page: () => const MoreScreen(),
+                  name: '/mark-attendance',
+                  page: () =>
+                  MarkAttendanceScreen(),
+                  binding:
+                  MarkAttendanceBinding(),
                 ),
               ],
             ),

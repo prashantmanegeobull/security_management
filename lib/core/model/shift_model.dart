@@ -10,10 +10,11 @@ class ShiftModel {
   final String siteCode;
   final String siteName;
   final String siteAddress;
-  final String siteRadius;
+
 
   final String status;
 
+  final double siteRadius;
   final double latitude;
   final double longitude;
 
@@ -62,8 +63,9 @@ class ShiftModel {
       siteAddress:
       json['site_address'] ?? '',
 
-      siteRadius:
-      json['site_radius'] ?? '',
+      siteRadius: double.tryParse(
+        json['site_radius'].toString(),
+      ) ?? 0,
 
       status:
       json['status'] ?? '',

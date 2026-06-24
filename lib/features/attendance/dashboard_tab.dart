@@ -17,6 +17,7 @@ import '../../core/theme/appSpacing.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_colors2.dart';
 import '../../core/theme/app_text_style.dart';
+import '../dashBoard/Widgets/dashboard_bottom_nav.dart';
 import 'Bloc/dashboard_bloc.dart';
 import 'Bloc/dashboard_event.dart';
 import 'Bloc/dashboard_state.dart';
@@ -164,8 +165,8 @@ class _AttendancePageState extends State<AttendancePage>
 
           return _dashboardUI();
         },
-      )
-      ,
+      ),
+      bottomNavigationBar: const DashboardBottomNav(),
     );
   }
 

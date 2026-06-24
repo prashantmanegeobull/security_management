@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../core/model/shift_model.dart';
 import '../../../core/theme/app_colors.dart';
@@ -68,7 +67,7 @@ class ShiftDetailsScreen extends StatelessWidget {
                   _buildInfoTile(
                     title: "Site Radius",
                     value:
-                    shift.siteRadius,
+                    shift.siteRadius.toString(),
                     showDivider: false,
                   ),
                 ],

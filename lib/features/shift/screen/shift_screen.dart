@@ -4,6 +4,7 @@ import 'package:security_management/features/shift/screen/shift_details_screen.d
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_style.dart';
+import '../../dashBoard/Widgets/dashboard_bottom_nav.dart';
 import '../controller/shift_controller.dart';
 import '../widget/shift_card.dart';
 
@@ -127,6 +128,7 @@ class ShiftScreen extends StatelessWidget {
             ],
           );
         }),
+        bottomNavigationBar: const DashboardBottomNav(),
       ),
     );
   }
