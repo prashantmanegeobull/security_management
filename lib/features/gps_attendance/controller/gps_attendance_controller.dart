@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../core/model/shift_model.dart';
 import '../../../core/rules/attendance_rule_engine.dart';
 import '../../shared/active_shift_manager.dart';
+import '../service/attendance_sound_service.dart';
 import '../service/gps_tracking_service.dart';
 import '../widgets/attendance_alert_dialog.dart';
 
@@ -71,6 +72,10 @@ class GpsAttendanceController extends GetxController {
         !popupDismissed.value) {
 
       popupShown.value = true;
+
+      print("BEFORE PLAYING ATTENDANCE SOUND");
+      AttendanceSoundService.playAttendanceAlert();
+      print("AFTER PLAYING ATTENDANCE SOUND");
 
       Get.dialog(
         AttendanceAlertDialog(

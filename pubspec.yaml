@@ -71,6 +71,7 @@ dependencies:
   phone_state: ^3.0.1
   audioplayers: ^6.0.0
   dio:
+  vibration: ^3.1.0
 
 
 
@@ -96,6 +97,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/home_tap_icon/
+    - assets/audio/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
